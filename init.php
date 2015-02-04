@@ -62,11 +62,22 @@ function obywie_attraction_modifymenu() {
 	'manage_options', //capability
 	'obywie_attraction_update', //menu slug
 	'obywie_attraction_update'
+	); //function	
+	
+	//this submenu is HIDDEN, however, we need to add it anyways
+	add_submenu_page(
+	null, //parent slug
+	'Delete Attraction', //page title
+	'Delete', //menu title
+	'manage_options', //capability
+	'obywie_attraction_delete', //menu slug
+	'obywie_attraction_delete'
 	); //function
 }
 define('ROOTDIR2', plugin_dir_path(__FILE__));
 require_once(ROOTDIR2 . 'obywieattr-list.php');
 require_once(ROOTDIR2 . 'obywieattr-create.php');
 require_once(ROOTDIR2 . 'obywieattr-update.php');
+require_once(ROOTDIR2 . 'obywieattr-delete.php');
 ?>
 
