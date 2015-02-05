@@ -17,9 +17,12 @@ if(isset($_POST['attraction_name'])){
 <link type="text/css" href="<?php echo WP_PLUGIN_URL; ?>/obywieattraction/style-admin.css" rel="stylesheet" />
 <div class="wrap">
 <h2>Add New Attraction List</h2>
-<?php if (isset($message)): ?><div class="updated"><p><?php echo $message;?></p></div><?php endif;?>
+<?php if (isset($message)): ?><div class="updated">
+<p style="color:red;font-weight:bold;"><?php echo $message;?></p></div><?php endif;?>
 <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
-<p>Please fill the form Below...</p>
+<p style="color:red;font-weight:bold;">
+<?PHP $alert = "Updated Success <a href=\"".get_option('siteurl')."/wp-admin/admin.php?page=obywie_attraction_list\" class=\"hide-if-no-js add-new-h2\" >Please fill the form Below</a>"; ?>
+</p>
 <table class='wp-list-table widefat fixed'>
 <tr><th>Name</th><td><input type="text" name="attraction_name" value="<?php echo $attraction_name;?>"/></td></tr>
 <tr><th>Image Link</th><td><input type="text" name="attraction_image" value="<?php echo $attraction_image;?>"/></td></tr>
